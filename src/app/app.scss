@@ -1,3 +1,14 @@
+@use '../assets/scss/icons.scss';
+@use '../assets/scss/border.scss';
+
+:root {
+  --button-background: #c0c0c0;
+  --button-bright: #ffffff;
+  --button-light: #dfdfdf;
+  --button-shadow: #808080;
+  --button-text: #000000;
+}
+
 html,
 body {
   height: 100%;
