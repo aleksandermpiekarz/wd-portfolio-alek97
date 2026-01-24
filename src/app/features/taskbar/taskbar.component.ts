@@ -5,7 +5,8 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { translateWrapperService } from '../../services/translate-wrapper.service';
 import { TitleCasePipe } from '@angular/common';
 import { CdkMenuTrigger } from '@angular/cdk/menu';
-import { MenuStartComponent } from '../menu-start/menu-start.component';
+import { MenuStartComponent } from './components/menu-start/menu-start.component';
+import { MenusStateManager } from '../../services/menus-state-manager.service';
 
 @Component({
   selector: 'app-taskbar',
@@ -15,9 +16,9 @@ import { MenuStartComponent } from '../menu-start/menu-start.component';
 })
 export class TaskbarComponent implements AfterViewInit {
   private translateWrapper = inject(translateWrapperService);
+  private xx = inject(MenusStateManager);
 
   public currentLanguage = signal(this.translateWrapper.getCurrentLanguage());
-
   public time = computed(() =>
     this.now().toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit' }),
   );
@@ -34,12 +35,15 @@ export class TaskbarComponent implements AfterViewInit {
   @ViewChild('menuTrigger') menuTrigger!: CdkMenuTrigger;
   ngAfterViewInit() {
     setTimeout(() => {
-      console.log('huj');
       this.menuTrigger.open();
     }, 100);
   }
   public changeLanguage() {
     const newLanguage = this.translateWrapper.toggleAndReturnLanguage();
     this.currentLanguage.set(newLanguage);
+  }
+
+  public onMenuClosed() {
+    this.xx.reset();
   }
 }
