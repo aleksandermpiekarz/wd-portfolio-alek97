@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TaskbarComponent } from './features/taskbar/taskbar.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,10 @@ import { TaskbarComponent } from './features/taskbar/taskbar.component';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('wd-portfolio');
+  private translate = inject(TranslateService);
+
+  constructor() {
+    this.translate.addLangs(['pl', 'en']);
+    this.translate.use('pl');
+  }
 }

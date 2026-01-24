@@ -3,6 +3,7 @@
   border-top: 1px solid var(--button-bright);
   height: 27px;
   display: flex;
+  padding: 0 0 2px 2px;
 
   background: var(--button-background);
   color: var(--button-text);
@@ -21,15 +22,32 @@
     display: flex;
     align-items: center;
     border: solid 1px;
+    font-size: 13px;
     gap: 10px;
     padding: 0 5px;
     border-color: var(--button-shadow) var(--button-bright) var(--button-bright)
       var(--button-shadow);
     margin: 2px;
+    cursor: default;
 
     .ico {
-      height: 17px;
-      width: 17px;
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    .language-selector {
+      color: var(--text-white);
+      background-color: var(--deep-blue);
+      padding: 0 3px;
+      margin: 2px;
+      line-height: 17px;
+      cursor: pointer;
     }
   }
 

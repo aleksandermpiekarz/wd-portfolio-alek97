@@ -1,0 +1,9 @@
+{
+  "app": {
+    "start": "Start",
+    "hello": "Hi, this is the desktop",
+    "applications": {
+      "paint": "Paint"
+    }
+  }
+}
