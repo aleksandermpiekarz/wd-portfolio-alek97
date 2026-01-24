@@ -10,7 +10,7 @@ export class translateWrapperService {
   }
 
   public toggleAndReturnLanguage(): string {
-    const goToLanguage = this.translate.getCurrentLang() === 'pl' ? 'en' : 'psl';
+    const goToLanguage = this.translate.getCurrentLang() === 'pl' ? 'en' : 'pl';
 
     this.translate.use(goToLanguage);
 
