@@ -5,34 +5,73 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-}
 
-.ico-directory-closed {
-  background-image: url('/assets/img/img_directory-closed.png');
-}
+  &-directory-closed {
+    background-image: url('/assets/img/img_directory-closed.png');
+  }
 
-.ico-loudspeaker {
-  background-image: url('/assets/img/img_loudspeaker.png');
-}
+  &-loudspeaker {
+    background-image: url('/assets/img/img_loudspeaker.png');
+  }
 
-.ico-ms-dos {
-  background-image: url('/assets/img/img_ms-dos.png');
-}
+  &-ms-dos {
+    background-image: url('/assets/img/img_ms-dos.png');
+  }
 
-.ico-my-computer {
-  background-image: url('/assets/img/img_my-computer.png');
-}
+  &-my-computer {
+    background-image: url('/assets/img/img_my-computer.png');
+  }
 
-.ico-notepad {
-  background-image: url('/assets/img/img_notepad-file.png');
-}
+  &-notepad {
+    background-image: url('/assets/img/img_notepad-file.png');
+  }
 
-.ico-win-logo {
-  background-image: url('/assets/img/img_win-logo.png');
-}
+  &-win-logo {
+    background-image: url('/assets/img/img_win-logo.png');
+  }
 
-.ico-menu-banner {
-  background-image: url('/assets/img/img_menu-banner.png');
-  height: 386px;
-  width: 61px;
+  //  Menu start
+
+  &-directory-open {
+    background-image: url('/assets/img/img_directory-open.png');
+  }
+
+  &-directory-favorites {
+    background-image: url('/assets/img/img_directory-favorites.png');
+  }
+
+  &-key-win {
+    background-image: url('/assets/img/img_key-win.png');
+  }
+
+  &-settings {
+    background-image: url('/assets/img/img_settings.png');
+  }
+
+  &-shut-down {
+    background-image: url('/assets/img/img_shut-down.png');
+  }
+
+  &-menu-banner {
+    background-image: url('/assets/img/img_menu-banner.png');
+    display: inline-block;
+    height: 389px;
+    width: 62px;
+  }
+
+  &-menu-banner-small {
+    background-image: url('/assets/img/img_menu-banner-small.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 223px;
+    width: 37px;
+  }
+
+  &-submenu-arrow {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 9px solid #000;
+  }
 }

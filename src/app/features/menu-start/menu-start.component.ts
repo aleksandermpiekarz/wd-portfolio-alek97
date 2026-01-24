@@ -8,7 +8,6 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-menu-start',
   imports: [CdkMenu, CdkMenuItem, NgClass, TranslatePipe],
   templateUrl: './menu-start.component.html',
-  styleUrl: './menu-start.component.scss',
 })
 export class MenuStartComponent {
   public menuItems: MenuItem[] = [

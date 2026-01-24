@@ -1,5 +1,10 @@
 <div class="taskbar">
-  <button class="taskbar__start border-image-classic">
+  <!--  //TODO: menuTrigger for dev, remove:-->
+  <button
+    class="taskbar__start border-image-classic"
+    [cdkMenuTriggerFor]="menu"
+    #menuTrigger="cdkMenuTriggerFor"
+  >
     <span class="ico ico-win-logo"></span>
     <b>{{ 'app.start' | translate }}</b>
   </button>
@@ -16,3 +21,7 @@
     {{ time() }}
   </div>
 </div>
+
+<ng-template #menu>
+  <app-menu-start></app-menu-start>
+</ng-template>
