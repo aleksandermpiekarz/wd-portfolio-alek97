@@ -14,9 +14,9 @@ import { MenusStateManager } from '../../services/menus-state-manager.service';
   templateUrl: './taskbar.component.html',
   styleUrl: './taskbar.component.scss',
 })
-export class TaskbarComponent implements AfterViewInit {
+export class TaskbarComponent {
   private translateWrapper = inject(translateWrapperService);
-  private xx = inject(MenusStateManager);
+  private menusStateManager = inject(MenusStateManager);
 
   public currentLanguage = signal(this.translateWrapper.getCurrentLanguage());
   public time = computed(() =>
@@ -31,19 +31,12 @@ export class TaskbarComponent implements AfterViewInit {
       .subscribe(() => this.now.set(new Date()));
   }
 
-  //TODO: changes for dev, remove:
-  @ViewChild('menuTrigger') menuTrigger!: CdkMenuTrigger;
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.menuTrigger.open();
-    }, 100);
-  }
   public changeLanguage() {
     const newLanguage = this.translateWrapper.toggleAndReturnLanguage();
     this.currentLanguage.set(newLanguage);
   }
 
   public onMenuClosed() {
-    this.xx.reset();
+    this.menusStateManager.reset();
   }
 }
