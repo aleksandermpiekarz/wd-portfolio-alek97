@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-desktop',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './desktop.component.html',
   styleUrl: './desktop.component.scss',
 })

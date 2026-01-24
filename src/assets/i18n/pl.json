@@ -1,0 +1,9 @@
+{
+  "app": {
+    "start": "Start",
+    "hello": "Witamy, to jest pulpit",
+    "applications": {
+      "paint": "Paint"
+    }
+  }
+}
