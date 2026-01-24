@@ -3,10 +3,21 @@
   border-top: 1px solid var(--button-bright);
   height: 27px;
   display: flex;
-  padding: 0 0 2px 2px;
 
   background: var(--button-background);
   color: var(--button-text);
+
+  &__start {
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    .ico {
+      height: 22px;
+      width: 22px;
+    }
+  }
 
   &__divider {
     border-left: 2px solid var(--button-shadow);
@@ -22,7 +33,7 @@
     display: flex;
     align-items: center;
     border: solid 1px;
-    font-size: 13px;
+    font-size: var(--text-small);
     gap: 10px;
     padding: 0 5px;
     border-color: var(--button-shadow) var(--button-bright) var(--button-bright)
@@ -48,17 +59,6 @@
       margin: 2px;
       line-height: 17px;
       cursor: pointer;
-    }
-  }
-
-  &__start {
-    padding: 2px 4px;
-    display: flex;
-    align-items: center;
-
-    .ico {
-      height: 22px;
-      width: 22px;
     }
   }
 }
