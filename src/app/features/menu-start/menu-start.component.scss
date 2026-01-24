@@ -1,0 +1,18 @@
+.menu-start {
+  background-color: var(--button-background);
+
+  &__banner {
+    background-color: var(--deep-blue);
+  }
+
+  &__divider {
+    border-top: 2px solid var(--button-shadow);
+    border-bottom: 2px solid var(--button-bright);
+  }
+
+  .menu-start-icon {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+  }
+}
