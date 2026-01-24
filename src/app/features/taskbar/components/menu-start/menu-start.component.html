@@ -1,0 +1,50 @@
+<div class="bg-[var(--button-background)] border-image-classic flex w-72" cdkMenu>
+  <div class="bg-[var(--deep-blue)] flex flex-col justify-end">
+    <div class="ico-menu-banner-small"></div>
+  </div>
+
+  <div class="w-full flex flex-col justify-end">
+    @for (menuItem of menuItems; track menuItem.title; let index = $index) {
+      @if (index === 3) {
+        <div class="px-0.5 py-2">
+          <div
+            class="border-t-[2px] border-b-[2px] border-t-[var(--button-shadow)] border-b-[var(--button-bright)] w-full"
+          ></div>
+        </div>
+      }
+
+      @if (menuItem.submenuItems?.length) {
+        <div
+          #trigger="cdkMenuTriggerFor"
+          class="flex items-center justify-between cursor-pointer hover:bg-[var(--deep-blue)] hover:text-white"
+          [ngClass]="activeIds().includes(menuItem.id) ? 'bg-[var(--deep-blue)] text-white' : ''"
+          [cdkMenuTriggerFor]="menu"
+          (cdkMenuOpened)="menuOpen(trigger, menuItem.id)"
+          (cdkMenuClosed)="menuClose()"
+        >
+          <div class="flex items-center gap-2 px-2 py-1">
+            <span class="inline-block h-12 w-12" [ngClass]="menuItem.icon"> </span>
+            <span> {{ menuItem.title | translate }}</span>
+          </div>
+          <span class="ico-submenu-arrow pr-2"></span>
+        </div>
+      } @else {
+        <div
+          class="flex items-center justify-between cursor-pointer hover:bg-[var(--deep-blue)] hover:text-white"
+          cdkMenuItem
+        >
+          <div class="flex items-center gap-2 px-2 py-1">
+            <span class="inline-block h-12 w-12" [ngClass]="menuItem.icon"> </span>
+            <span> {{ menuItem.title | translate }}</span>
+          </div>
+        </div>
+      }
+
+      <ng-template #menu>
+        <app-menu-start-nested-list
+          [menuItems]="menuItem?.submenuItems"
+        ></app-menu-start-nested-list>
+      </ng-template>
+    }
+  </div>
+</div>
