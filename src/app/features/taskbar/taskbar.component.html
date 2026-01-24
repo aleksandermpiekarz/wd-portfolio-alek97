@@ -1,5 +1,9 @@
 <div class="taskbar">
-  <button class="taskbar__start border-image-classic">
+  <button
+    class="taskbar__start border-image-classic"
+    [cdkMenuTriggerFor]="menu"
+    (cdkMenuClosed)="onMenuClosed()"
+  >
     <span class="ico ico-win-logo"></span>
     <b>{{ 'app.start' | translate }}</b>
   </button>
@@ -8,7 +12,7 @@
   <div class="taskbar__divider"></div>
   <div class="taskbar__toolbar">
     <div class="taskbar__icons">
-      <span class="ico ico-loudspeaker"></span>
+      <span class="ico-loudspeaker"></span>
       <span class="language-selector" (click)="changeLanguage()">{{
         currentLanguage() | titlecase
       }}</span>
@@ -16,3 +20,7 @@
     {{ time() }}
   </div>
 </div>
+
+<ng-template #menu>
+  <app-menu-start class="w-full"></app-menu-start>
+</ng-template>

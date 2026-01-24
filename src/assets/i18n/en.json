@@ -3,7 +3,14 @@
     "start": "Start",
     "hello": "Hi, this is the desktop",
     "applications": {
-      "paint": "Paint"
+      "paint": "Paint",
+      "documents": "Documents",
+      "favourites": "Favourites",
+      "settings": "Settings"
+    },
+    "menu-start": {
+      "logOff": "Log Off...",
+      "turnOff": "Shut Down..."
     }
   }
 }

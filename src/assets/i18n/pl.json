@@ -3,7 +3,14 @@
     "start": "Start",
     "hello": "Witamy, to jest pulpit",
     "applications": {
-      "paint": "Paint"
+      "paint": "Paint",
+      "documents": "Dokumenty",
+      "favourites": "Ulubione",
+      "settings": "Ustawienia"
+    },
+    "menu-start": {
+      "logOff": "Wyloguj...",
+      "turnOff": "Zamknij komputer..."
     }
   }
 }

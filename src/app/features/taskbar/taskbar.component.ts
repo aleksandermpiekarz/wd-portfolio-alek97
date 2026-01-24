@@ -1,21 +1,24 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { AfterViewInit, Component, computed, inject, signal, ViewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { interval } from 'rxjs';
 import { TranslatePipe } from '@ngx-translate/core';
 import { translateWrapperService } from '../../services/translate-wrapper.service';
 import { TitleCasePipe } from '@angular/common';
+import { CdkMenuTrigger } from '@angular/cdk/menu';
+import { MenuStartComponent } from './components/menu-start/menu-start.component';
+import { MenusStateManager } from '../../services/menus-state-manager.service';
 
 @Component({
   selector: 'app-taskbar',
-  imports: [TranslatePipe, TitleCasePipe],
+  imports: [TranslatePipe, TitleCasePipe, CdkMenuTrigger, MenuStartComponent],
   templateUrl: './taskbar.component.html',
   styleUrl: './taskbar.component.scss',
 })
 export class TaskbarComponent {
   private translateWrapper = inject(translateWrapperService);
+  private menusStateManager = inject(MenusStateManager);
 
   public currentLanguage = signal(this.translateWrapper.getCurrentLanguage());
-
   public time = computed(() =>
     this.now().toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit' }),
   );
@@ -31,5 +34,9 @@ export class TaskbarComponent {
   public changeLanguage() {
     const newLanguage = this.translateWrapper.toggleAndReturnLanguage();
     this.currentLanguage.set(newLanguage);
+  }
+
+  public onMenuClosed() {
+    this.menusStateManager.reset();
   }
 }
