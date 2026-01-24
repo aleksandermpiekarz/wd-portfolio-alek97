@@ -1,14 +1,14 @@
 import { Component, inject, input } from '@angular/core';
 import { MenuItem } from '../../../../types/menu-item';
 import { TranslatePipe } from '@ngx-translate/core';
-import { CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
+import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 import { NgClass } from '@angular/common';
 import { MenusStateManager } from '../../../../services/menus-state-manager.service';
 
 @Component({
   selector: 'app-menu-start-nested-list',
   templateUrl: './menu-start-nested-list.component.html',
-  imports: [TranslatePipe, CdkMenuTrigger, NgClass, CdkMenuItem],
+  imports: [TranslatePipe, CdkMenuTrigger, NgClass, CdkMenuItem, CdkMenu],
 })
 export class MenuStartNestedListComponent {
   private menusStateManager = inject(MenusStateManager);

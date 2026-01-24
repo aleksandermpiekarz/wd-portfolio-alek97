@@ -1,4 +1,7 @@
-<div class="bg-[var(--button-background)] border-image-classic w-72 flex flex-col justify-end">
+<div
+  class="bg-[var(--button-background)] border-image-classic w-72 flex flex-col justify-end"
+  cdkMenu
+>
   @for (menuItem of menuItems(); track menuItem.title) {
     @if (menuItem.submenuItems?.length) {
       <div
@@ -8,7 +11,6 @@
         [cdkMenuTriggerFor]="menu"
         (cdkMenuOpened)="menuOpen(trigger, menuItem.id)"
         (cdkMenuClosed)="menuClose()"
-        (click)="$event.preventDefault()"
       >
         <div class="flex items-center gap-2 px-2 py-1">
           <span class="inline-block h-6 w-6 bg-contain" [ngClass]="menuItem.icon"> </span>
