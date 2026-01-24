@@ -1,4 +1,4 @@
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 import { MenuItem } from '../../../../types/menu-item';
 import { MenuStartNestedListComponent } from '../menu-start-nested-list/menu-start-nested-list.component';
@@ -19,147 +19,156 @@ import { MenusStateManager } from '../../../../services/menus-state-manager.serv
   templateUrl: './menu-start.component.html',
 })
 export class MenuStartComponent {
+  private menusStateManager = inject(MenusStateManager);
+
+  public activeIds = this.menusStateManager.activeIds;
+
   public menuItems: MenuItem[] = [
     {
+      id: '1',
       icon: 'ico-directory-favorites',
       title: 'app.applications.favourites',
       submenuItems: [
         {
+          id: '1-1',
           icon: 'ico-directory-favorites',
           title: 'app.applications.favourites',
           submenuItems: [
             {
+              id: '1-1-1',
               icon: 'ico-directory-favorites',
               title: 'app.applications.favourites',
               submenuItems: [
                 {
+                  id: '1-1-1-1',
                   icon: 'ico-directory-favorites',
                   title: 'app.applications.favourites',
                 },
               ],
             },
             {
+              id: '1-1-2',
               icon: 'ico-directory-open',
               title: 'app.applications.documents',
               submenuItems: [
                 {
+                  id: '1-1-2-1',
                   icon: 'ico-directory-favorites',
                   title: 'app.applications.favourites',
                 },
               ],
             },
-            { icon: 'ico-settings', title: 'app.applications.settings' },
-            { icon: 'ico-key-win', title: 'app.menu-start.logOff' },
-            { icon: 'ico-shut-down', title: 'app.menu-start.turnOff' },
+            { id: '1-1-3', icon: 'ico-settings', title: 'app.applications.settings' },
+            { id: '1-1-4', icon: 'ico-key-win', title: 'app.menu-start.logOff' },
+            { id: '1-1-5', icon: 'ico-shut-down', title: 'app.menu-start.turnOff' },
           ],
         },
         {
+          id: '1-2',
           icon: 'ico-directory-open',
           title: 'app.applications.documents',
           submenuItems: [
             {
+              id: '1-2-1',
               icon: 'ico-directory-favorites',
               title: 'app.applications.favourites',
               submenuItems: [
                 {
+                  id: '1-2-1-1',
                   icon: 'ico-directory-favorites',
                   title: 'app.applications.favourites',
                   submenuItems: [
                     {
+                      id: '1-2-1-1-1',
                       icon: 'ico-directory-favorites',
                       title: 'app.applications.favourites',
                     },
                   ],
                 },
                 {
+                  id: '1-2-1-2',
                   icon: 'ico-directory-open',
                   title: 'app.applications.documents',
                   submenuItems: [
                     {
+                      id: '1-2-1-2-1',
                       icon: 'ico-directory-favorites',
                       title: 'app.applications.favourites',
                     },
                   ],
                 },
-                { icon: 'ico-settings', title: 'app.applications.settings' },
-                { icon: 'ico-key-win', title: 'app.menu-start.logOff' },
-                { icon: 'ico-shut-down', title: 'app.menu-start.turnOff' },
+                { id: '1-2-1-3', icon: 'ico-settings', title: 'app.applications.settings' },
               ],
             },
             {
+              id: '1-2-2',
               icon: 'ico-directory-open',
               title: 'app.applications.documents',
               submenuItems: [
                 {
+                  id: '1-2-2-1',
                   icon: 'ico-directory-favorites',
                   title: 'app.applications.favourites',
                   submenuItems: [
                     {
+                      id: '1-2-2-1-1',
                       icon: 'ico-directory-favorites',
                       title: 'app.applications.favourites',
                     },
                   ],
                 },
                 {
+                  id: '1-2-2-2',
                   icon: 'ico-directory-open',
                   title: 'app.applications.documents',
                   submenuItems: [
                     {
+                      id: '1-2-2-2-1',
                       icon: 'ico-directory-favorites',
                       title: 'app.applications.favourites',
                     },
                   ],
                 },
-                { icon: 'ico-settings', title: 'app.applications.settings' },
-                { icon: 'ico-key-win', title: 'app.menu-start.logOff' },
-                { icon: 'ico-shut-down', title: 'app.menu-start.turnOff' },
+                { id: '1-2-2-3', icon: 'ico-settings', title: 'app.applications.settings' },
               ],
             },
-            { icon: 'ico-settings', title: 'app.applications.settings' },
-            { icon: 'ico-key-win', title: 'app.menu-start.logOff' },
-            { icon: 'ico-shut-down', title: 'app.menu-start.turnOff' },
+            { id: '1-2-3', icon: 'ico-settings', title: 'app.applications.settings' },
           ],
         },
-        { icon: 'ico-settings', title: 'app.applications.settings' },
-        { icon: 'ico-key-win', title: 'app.menu-start.logOff' },
-        { icon: 'ico-shut-down', title: 'app.menu-start.turnOff' },
+        { id: '1-3', icon: 'ico-settings', title: 'app.applications.settings' },
       ],
     },
     {
+      id: '2',
       icon: 'ico-directory-open',
       title: 'app.applications.documents',
       submenuItems: [
         {
+          id: '2-1',
           icon: 'ico-directory-favorites',
           title: 'app.applications.favourites',
-          submenuItems: [{ icon: 'ico-directory-favorites', title: 'app.applications.favourites' }],
+          submenuItems: [
+            { id: '2-1-1', icon: 'ico-directory-favorites', title: 'app.applications.favourites' },
+          ],
         },
         {
+          id: '2-2',
           icon: 'ico-directory-open',
           title: 'app.applications.documents',
-          submenuItems: [{ icon: 'ico-directory-favorites', title: 'app.applications.favourites' }],
+          submenuItems: [
+            { id: '2-2-1', icon: 'ico-directory-favorites', title: 'app.applications.favourites' },
+          ],
         },
-        { icon: 'ico-settings', title: 'app.applications.settings' },
-        { icon: 'ico-key-win', title: 'app.menu-start.logOff' },
-        { icon: 'ico-shut-down', title: 'app.menu-start.turnOff' },
+        { id: '2-3', icon: 'ico-settings', title: 'app.applications.settings' },
       ],
     },
-    { icon: 'ico-settings', title: 'app.applications.settings' },
-    { icon: 'ico-key-win', title: 'app.menu-start.logOff' },
-    { icon: 'ico-shut-down', title: 'app.menu-start.turnOff' },
+    { id: '3', icon: 'ico-settings', title: 'app.applications.settings' },
+    { id: '4', icon: 'ico-key-win', title: 'app.menu-start.logOff' },
+    { id: '5', icon: 'ico-shut-down', title: 'app.menu-start.turnOff' },
   ];
 
-  private menusStateManager = inject(MenusStateManager);
-
-  //TODO: changes for dev, remove:
-  @ViewChild('trigger') menuTrigger!: CdkMenuTrigger;
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.menuTrigger.open();
-    }, 100);
-  }
-  public menuOpen(trigger: CdkMenuTrigger): void {
-    this.menusStateManager.onOpened(trigger, 0);
+  public menuOpen(trigger: CdkMenuTrigger, id: string): void {
+    this.menusStateManager.onOpened(trigger, 0, id);
   }
 
   public menuClose(): void {

@@ -15,10 +15,11 @@
 
       @if (menuItem.submenuItems?.length) {
         <div
-          class="flex items-center justify-between cursor-pointer hover:bg-[var(--deep-blue)] hover:text-white"
           #trigger="cdkMenuTriggerFor"
+          class="flex items-center justify-between cursor-pointer hover:bg-[var(--deep-blue)] hover:text-white"
+          [ngClass]="activeIds().includes(menuItem.id) ? 'bg-[var(--deep-blue)] text-white' : ''"
           [cdkMenuTriggerFor]="menu"
-          (cdkMenuOpened)="menuOpen(trigger)"
+          (cdkMenuOpened)="menuOpen(trigger, menuItem.id)"
           (cdkMenuClosed)="menuClose()"
         >
           <div class="flex items-center gap-2 px-2 py-1">

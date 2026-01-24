@@ -11,15 +11,16 @@ import { MenusStateManager } from '../../../../services/menus-state-manager.serv
   imports: [TranslatePipe, CdkMenuTrigger, NgClass, CdkMenuItem],
 })
 export class MenuStartNestedListComponent {
+  private menusStateManager = inject(MenusStateManager);
+
+  public activeIds = this.menusStateManager.activeIds;
   public menuItems = input<MenuItem[] | undefined>([]);
   public nestedLevel = input(1);
 
-  private xx = inject(MenusStateManager);
-
-  public menuOpen(trigger: CdkMenuTrigger) {
-    this.xx.onOpened(trigger, this.nestedLevel());
+  public menuOpen(trigger: CdkMenuTrigger, id: string) {
+    this.menusStateManager.onOpened(trigger, this.nestedLevel(), id);
   }
   public menuClose() {
-    this.xx.onClosed(this.nestedLevel());
+    this.menusStateManager.onClosed(this.nestedLevel());
   }
 }

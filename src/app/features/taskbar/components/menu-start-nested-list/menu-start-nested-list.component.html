@@ -4,8 +4,9 @@
       <div
         #trigger="cdkMenuTriggerFor"
         class="flex items-center justify-between cursor-pointer hover:bg-[var(--deep-blue)] hover:text-white"
+        [ngClass]="activeIds().includes(menuItem.id) ? 'bg-[var(--deep-blue)] text-white' : ''"
         [cdkMenuTriggerFor]="menu"
-        (cdkMenuOpened)="menuOpen(trigger)"
+        (cdkMenuOpened)="menuOpen(trigger, menuItem.id)"
         (cdkMenuClosed)="menuClose()"
         (click)="$event.preventDefault()"
       >
