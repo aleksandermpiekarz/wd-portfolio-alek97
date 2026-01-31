@@ -1,0 +1,23 @@
+<div
+  class="window-view bg-win-gray border-image-classic border-2 p-0.5"
+  [ngClass]="folderData.maximized ? 'TODO' : ''"
+>
+  <div class="font-bold win-gradient flex items-center justify-between px-1">
+    <div class="flex items-center gap-1">
+      <span class="ico" [ngClass]="folderData.icon"></span>
+      <span class="text-white">{{ folderData.title }}</span>
+    </div>
+    <div class="flex">
+      <button class="ico ico-minimize border-image-classic border-2 p-0.5 bg-win-gray"></button>
+
+      @if (folderData.maximized) {
+        <button
+          class="ico ico-window-mode border-image-classic border-2 p-0.5 bg-win-gray"
+        ></button>
+      } @else {
+        <button class="ico ico-maximize border-image-classic border-2 p-0.5 bg-win-gray"></button>
+      }
+      <button class="ico ico-close border-image-classic border-2 p-0.5 bg-win-gray"></button>
+    </div>
+  </div>
+</div>

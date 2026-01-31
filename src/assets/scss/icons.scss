@@ -74,4 +74,21 @@
     border-bottom: 7px solid transparent;
     border-left: 9px solid #000;
   }
+
+  // window
+  &-close {
+    background-image: url('/assets/img/img_close.png');
+  }
+
+  &-maximize {
+    background-image: url('/assets/img/img_maximize.png');
+  }
+
+  &-window-mode {
+    background-image: url('/assets/img/img_window-mode.png');
+  }
+
+  &-minimize {
+    background-image: url('/assets/img/img_minimize.png');
+  }
 }

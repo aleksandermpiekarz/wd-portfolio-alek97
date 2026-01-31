@@ -1,1 +1,22 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@layer theme, base, components, utilities;
+
+@layer utilities {
+  .win-gradient {
+    background: linear-gradient(to right, var(--deep-blue) 0%, var(--light-blue) 100%);
+  }
+
+  .border-image-classic {
+    border-image: url('/assets/img/img_border-image.svg') 64 / 2px;
+    margin: 1px;
+  }
+
+  .bg-deep-blue {
+    background-color: var(--deep-blue);
+  }
+
+  .bg-win-gray {
+    background-color: var(--button-background);
+  }
+}

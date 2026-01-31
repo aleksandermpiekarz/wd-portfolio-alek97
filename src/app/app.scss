@@ -1,5 +1,4 @@
 @use '../assets/scss/icons.scss';
-@use '../assets/scss/border.scss';
 
 :root {
   --button-background: #c0c0c0;
@@ -11,6 +10,7 @@
   --text-white: #ffffff;
 
   --deep-blue: #12007f;
+  --light-blue: #1084d0;
 
   --text-small: 13px;
   --text-normal: 16px;
@@ -22,6 +22,6 @@ body {
 }
 body {
   margin: 0;
-  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-family: 'Segoe UI', 'MS Sans Serif', Arial, sans-serif;
   background: #008080;
 }
