@@ -1,6 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { selectWindowsItems } from '../../core/store/windows/windows.selectors';
+import {
+  selectActiveWindow,
+  selectIndexOrder,
+  selectWindowsItems,
+} from '../../core/store/windows/windows.selectors';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FolderViewComponent } from '../folder-view/folder-view.component';
 
@@ -12,5 +16,8 @@ import { FolderViewComponent } from '../folder-view/folder-view.component';
 })
 export class WindowsGeneratorComponent {
   private store = inject(Store);
+
   public windows = toSignal(this.store.select(selectWindowsItems));
+  public indexOrder = toSignal(this.store.select(selectIndexOrder));
+  public activeWindow = toSignal(this.store.select(selectActiveWindow));
 }

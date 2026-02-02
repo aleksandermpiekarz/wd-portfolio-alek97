@@ -7,3 +7,6 @@ export const selectWindowsItems = createSelector(
   selectWindowsState,
   windowsAdapterSelectors.selectAll,
 );
+
+export const selectIndexOrder = createSelector(selectWindowsState, (state) => state.indexOrder);
+export const selectActiveWindow = createSelector(selectWindowsState, (state) => state.activeWindow);

@@ -9,12 +9,13 @@ import { windowsActions } from '../../core/store/windows/windows.actions';
 })
 export class DesktopComponent {
   private store = inject(Store);
+  private id = 0;
 
   public addFolder(): void {
     this.store.dispatch(
-      windowsActions.addWindow({
+      windowsActions.addWindowAndPushToFront({
         windowData: {
-          id: '1',
+          id: String(this.id++),
           icon: 'ico-directory-open',
           title: 'My Documents',
           files: [],

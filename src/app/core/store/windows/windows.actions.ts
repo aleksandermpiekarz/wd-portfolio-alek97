@@ -6,10 +6,13 @@ export const windowsActions = createActionGroup({
   events: {
     'Fetch ': emptyProps(),
     'Change loading state': props<{ loading: boolean }>(),
-    'Set windows': props<{ windowsData: WindowEntity[] }>(),
-    'Add windows': props<{ windowsData: WindowEntity[] }>(),
+    'Add window and push to front': props<{ windowData: WindowEntity }>(),
     'Add window': props<{ windowData: WindowEntity }>(),
     'Update window view mode': props<{ windowId: string; windowViewMode: WindowViewMode }>(),
     'Close window': props<{ windowId: string }>(),
+    'Push window to front': props<{ windowId: string }>(),
+    'Set index order': props<{ indexOrder: string[] }>(),
+    'Set active window': props<{ windowId: string }>(),
+    'Reset active window': emptyProps(),
   },
 });

@@ -1,5 +1,9 @@
 @for (window of windows(); track window.id) {
   @if (window.type === 'folder' && window.windowViewMode !== 'minimized') {
-    <app-folder-view [folderData]="window"></app-folder-view>
+    <app-folder-view
+      [folderData]="window"
+      [index]="indexOrder()?.indexOf(window.id)"
+      [active]="activeWindow() === window.id"
+    ></app-folder-view>
   }
 }

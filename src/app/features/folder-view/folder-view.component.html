@@ -3,8 +3,15 @@
     class="window-view bg-win-gray border-image-classic border-2"
     [ngClass]="folderData()?.windowViewMode === 'window-mode' ? 'p-0.5' : ''"
     cdkDrag
+    [style.z-index]="index()"
+    (mousedown)="setActiveWindow()"
+    (clickOutside)="resetActiveWindow()"
   >
-    <div class="font-bold win-gradient flex items-center justify-between px-1" cdkDragHandle>
+    <div
+      class="font-bold flex items-center justify-between px-1"
+      [ngClass]="active() ? 'win-gradient' : 'win-inactive-gradient'"
+      cdkDragHandle
+    >
       <div class="flex items-center gap-1">
         <span class="ico" [ngClass]="folderData()?.icon"></span>
         <span class="text-white">{{ folderData()?.title }}</span>
