@@ -2,14 +2,28 @@
 
 @layer theme, base, components, utilities;
 
+/* TODO: Move to separate file */
 @layer utilities {
   .win-gradient {
     background: linear-gradient(to right, var(--deep-blue) 0%, var(--light-blue) 100%);
   }
 
+  .win-inactive-gradient {
+    background: linear-gradient(to right, var(--button-shadow) 0%, var(--button-shadow-light) 100%);
+  }
+
   .border-image-classic {
     border-image: url('/assets/img/img_border-image.svg') 64 / 2px;
     margin: 1px;
+  }
+
+  .button-classic-border {
+    border-image: url('/assets/img/img_border-image.svg') 64 / 2px;
+    margin: 1px;
+
+    &:active {
+      border-image: url('/assets/img/img_border-image-reversed.png') 64 / 2px;
+    }
   }
 
   .bg-deep-blue {

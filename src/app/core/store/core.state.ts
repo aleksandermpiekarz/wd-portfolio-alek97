@@ -1,13 +1,13 @@
-// import { converterReducer, ConverterState } from './converter/converter.reducer';
-// import { ActionReducerMap } from '@ngrx/store';
-// import { ConverterEffects } from './converter/converter.effects';
+import { ActionReducerMap } from '@ngrx/store';
+import { windowsReducer, WindowsState } from './windows/windows.reducer';
+import { WindowsEffects } from './windows/windows.effects';
 
-// export interface CoreState {
-//   converter: ConverterState;
-// }
+export interface CoreState {
+  windows: WindowsState;
+}
 
-// export const effects = [ConverterEffects];
+export const effects = [WindowsEffects];
 
-// export const reducers: ActionReducerMap<CoreState> = {
-//   converter: converterReducer,
-// };
+export const reducers: ActionReducerMap<CoreState> = {
+  windows: windowsReducer,
+};
