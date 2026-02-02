@@ -33,7 +33,6 @@ export class FolderViewComponent {
   }
 
   public setActiveWindow(): void {
-    console.log('yo');
     this.store.dispatch(
       windowsActions.pushWindowToFront({ windowId: this.folderData()?.id || '' }),
     );

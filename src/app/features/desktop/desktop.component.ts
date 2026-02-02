@@ -5,7 +5,6 @@ import { windowsActions } from '../../core/store/windows/windows.actions';
 @Component({
   selector: 'app-desktop',
   templateUrl: './desktop.component.html',
-  styleUrl: './desktop.component.scss',
 })
 export class DesktopComponent {
   private store = inject(Store);

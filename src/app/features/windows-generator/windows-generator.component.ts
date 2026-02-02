@@ -12,7 +12,6 @@ import { FolderViewComponent } from '../folder-view/folder-view.component';
   selector: 'app-windows-generator',
   imports: [FolderViewComponent],
   templateUrl: './windows-generator.component.html',
-  styleUrl: './windows-generator.component.scss',
 })
 export class WindowsGeneratorComponent {
   private store = inject(Store);
